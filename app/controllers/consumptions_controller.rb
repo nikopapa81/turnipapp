@@ -1,6 +1,6 @@
 class ConsumptionsController < ApplicationController
   def index
-    @consumptions = Consumption.all
+    @consumptions = current_user.consumptions
   end
 
   def show
@@ -16,6 +16,7 @@ class ConsumptionsController < ApplicationController
     @consumption.item_id = params[:item_id]
     @consumption.quantity = params[:quantity]
     @consumption.waste = params[:waste]
+    @consumption.user_id = current_user.id
 
     if @consumption.save
       redirect_to "/consumptions", :notice => "Consumption created successfully."

@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
   def index
-    @purchases = Purchase.all
+    @purchases = current_user.purchases
   end
 
   def show
@@ -18,6 +18,7 @@ class PurchasesController < ApplicationController
     @purchase.cost = params[:cost]
     @purchase.source = params[:source]
     @purchase.expiration_date = params[:expiration_date]
+    @purchase.user_id = current_user.id
 
     if @purchase.save
       redirect_to "/purchases", :notice => "Purchase created successfully."
