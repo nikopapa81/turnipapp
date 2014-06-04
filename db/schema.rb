@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140604151637) do
+ActiveRecord::Schema.define(version: 20140604154654) do
 
   create_table "activities", force: true do |t|
     t.string   "activity_name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140604151637) do
     t.boolean  "waste"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "food_categories", force: true do |t|
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140604151637) do
     t.integer  "avg_exp_days"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "purchases", force: true do |t|
@@ -50,6 +52,7 @@ ActiveRecord::Schema.define(version: 20140604151637) do
     t.date     "expiration_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "u_of_ms", force: true do |t|
