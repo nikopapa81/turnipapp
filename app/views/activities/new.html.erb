@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h1>Add Activity</h1>
+</div>
+
+<% if @activity.errors.any? %>
+  <% @activity.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<form action="/create_activity" class="form-horizontal">
+  <!-- Label and input for activity_name -->
+  <div class="form-group">
+    <label for="activity_name" class="col-sm-2 control-label">
+      Activity name
+    </label>
+    <div class="col-sm-10">
+      <input type="text" id="activity_name" name="activity_name" placeholder="Activity name" class="form-control" value="<%= @activity.activity_name %>">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <input type="submit" value="Create Activity" class="btn btn-primary">
+    </div>
+  </div>
+</form>
