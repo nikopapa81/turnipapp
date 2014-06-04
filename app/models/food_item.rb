@@ -5,4 +5,6 @@ validates :uofm_id, :presence => true
 validates :category_id, :presence => true
 validates :avg_exp_days, :presence => true
 
+has_many :purchases
+
 end
