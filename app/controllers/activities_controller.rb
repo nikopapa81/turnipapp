@@ -1,4 +1,17 @@
 class ActivitiesController < ApplicationController
+
+  def home
+  end
+
+  def about
+  end
+
+  def reports
+  end
+
+  def recipes
+  end
+
   def index
     @activities = Activity.all
   end

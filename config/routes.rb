@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  get('/', { :controller => 'activities', :action => 'home'})
+  get('/about', { :controller => 'activities', :action => 'about'})
+  get('/reports', { :controller => 'activities', :action => 'reports'})
+  get('/recipes', { :controller => 'activities', :action => 'recipes'})
+
   # Routes for the U_of_m resource:
   # CREATE
   get('/u_of_ms/new', { :controller => 'u_of_ms', :action => 'new' })
