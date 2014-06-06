@@ -1,7 +1,39 @@
-<h2>I will have all the reports here</h2>
+<h2>Below is a list of reports that will bring insights and lead to better decisions</h2>
 
-<div class = "jumbotron"><h4>Activity breakdown by month</h4></div>
-<img src="http://www.graphicsfuel.com/wp-content/uploads/2011/11/pie-chart-512.png" alt="Food Items" width="200" height="200"></a>
+<div>
+<%= Consumption.sum("quantity")%>
+</div>
+
+<div class = "jumbotron"><h4>Breakdown of Consumption vs. Waste</h4></div>
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Activity', 'Amount'],
+          ['Consumption',     138],
+          ['Waste',      14],
+        ]);
+
+        var options = {
+          title: 'Consumption vs. Waste',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart_3d" style="width: 400px; height: 300px;"></div>
+  </body>
+</html>
 
 <div class = "jumbotron"><h4>Percentage of food going to waste</h4></div>
 <img src="http://digitalunion.osu.edu/r2/summer07/dvancamp/images/notransbycategorysmall.jpg" alt="Food Items" width="600" height="200"></a>
+
+
