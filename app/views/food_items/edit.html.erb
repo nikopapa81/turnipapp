@@ -28,7 +28,13 @@
       Uofm
     </label>
     <div class="col-sm-10">
-      <input type="text" id="uofm_id" name="uofm_id" placeholder="Uofm" class="form-control" value="<%= @food_item.uofm_id %>">
+      <select name="uofm_id" class="form-control">
+        <% UOfM.all.each do |unit| %>
+            <option value="<%= unit.id %>">
+                <%= unit.unit_name %>
+            </option>
+        <% end %>
+      </select>
     </div>
   </div>
 
@@ -38,7 +44,13 @@
       Category
     </label>
     <div class="col-sm-10">
-      <input type="text" id="category_id" name="category_id" placeholder="Category" class="form-control" value="<%= @food_item.category_id %>">
+      <select name="category_id" class="form-control">
+        <% FoodCategory.all.each do |category| %>
+          <option value="<%= category.id %>">
+            <%= category.category_name %>
+          </option>
+        <% end %>
+      </select>
     </div>
   </div>
 
