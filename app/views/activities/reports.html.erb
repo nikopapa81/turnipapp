@@ -32,9 +32,11 @@
 </html>
 
 <div>
-<%= Consumption.sum("quantity")%>
+Quantity Consumed: <%= Consumption.where(waste: nil).sum("quantity")%>
+Quantity Wasted: <%= Consumption.where(waste: true).sum("quantity")%>
 </div>
 <div class = "title"><h4>Breakdown of Waste by Category</h4></div>
 <img src="http://digitalunion.osu.edu/r2/summer07/dvancamp/images/notransbycategorysmall.jpg" alt="Food Items" width="600" height="200"></a>
 
-
+<div class = "title"><h4>Critical Food Items</h4></div>
+<div class = "title"><h4>Inventory List</h4></div>

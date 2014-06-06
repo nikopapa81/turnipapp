@@ -21,8 +21,8 @@
     <% @food_items.each do |food_item| %>
       <tr>
         <td><%= food_item.item_name %></td>
-        <td><%= food_item.uofm_id %></td>
-        <td><%= food_item.category_id %></td>
+        <td><%= food_item.u_of_m.unit_name %></td>
+        <td><%= food_item.food_category %></td>
         <td><%= food_item.avg_exp_days %></td>
         <td>
           <a href="/food_items/<%= food_item.id %>" class="btn btn-primary">
